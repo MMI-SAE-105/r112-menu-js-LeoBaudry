@@ -1,6 +1,6 @@
-- nom :
-- prénom :
-- URL Netlify :
+- nom : BAUDRY 
+- prénom : Léo
+- URL Netlify : https://playful-pegasus-10a811.netlify.app/
 
 # Travail
 
