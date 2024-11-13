@@ -12,12 +12,12 @@ toggle.addEventListener("click", () => {
 // interchanger son état.
 
        if (isOpen) {
-        nav.setAttribute("aria-hidden", "true");  // Cache le menu
-        toggle.setAttribute("aria-expanded", "false");  // Indique que le menu est fermé
+        nav.ariaHidden = true;
+        toggle.ariaExpanded = "false";
         document.body.classList.remove('noscroll');  // Retire la classe 'noscroll'
     } else {
-        nav.setAttribute("aria-hidden", "false");  // Affiche le menu
-        toggle.setAttribute("aria-expanded", "true");  // Indique que le menu est ouvert
+        nav.ariaHidden = false;
+        toggle.ariaExpanded = "true";
         document.body.classList.add('noscroll');  // Ajoute la classe 'noscroll'
     }
 });
