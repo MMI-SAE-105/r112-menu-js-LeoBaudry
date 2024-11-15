@@ -74,3 +74,109 @@ On ajoute les propriétés "visibility: hidden" et "opacity: 0" pour masquer le 
   font-size: 1.2rem;
   text-align: left;
 }
+
+/* Pour construire le menu en mobile : 
+On construit le menu tel qu'il sera une fois ouvert.
+On ajoute les propriétés "visibility: hidden" et "opacity: 0" pour masquer le menu. */
+.menu {
+  position: fixed; /* Fixe le menu en position, il ne défilera pas avec la page : https://developer.mozilla.org/fr/docs/Web/CSS/position#fixed */
+  background-color: white;/* Définit la couleur de fond du menu en blanc : https://developer.mozilla.org/fr/docs/Web/CSS/background-color */
+  display: flex; /* Utilise Flexbox pour la mise en page des éléments enfants : https://developer.mozilla.org/fr/docs/Web/CSS/display-inside#flex */
+  top: 0; /* Positionne le menu en haut de la page : https://developer.mozilla.org/fr/docs/Web/CSS/top */
+  bottom: 0; /* Étend le menu jusqu'en bas de la page */
+  left: 0; /* Positionne le menu à gauche de la page */
+  right: 0; /* Étend le menu jusqu'à droite de la page */
+  transition: all .4s ease-in-out; /* Définit une transition de 0.4 secondes pour toutes les propriétés, avec un effet d'accélération et de décélération : https://developer.mozilla.org/fr/docs/Web/CSS/transition */
+  opacity: 0; /* Rend le menu complètement transparent : https://developer.mozilla.org/fr/docs/Web/CSS/opacity */
+  visibility: hidden; /* Cache le menu en le rendant invisible : https://developer.mozilla.org/fr/docs/Web/CSS/visibility#hidden  */
+}
+/* On se sert de Javascript pour gérer l'ouverture et la fermeture du menu avec l'attribut "aria-hidden" */
+.menu[aria-hidden="false"] {
+  opacity: 1; /* Rend le menu visible */
+  visibility: visible; /* Rend le menu complètement opaque */
+}
+
+/* On ajoute une classe sur le body pour empêcher le scroll lorsque le menu est ouvert */
+.noscroll {
+  overflow: hidden; /* Empêche le défilement de la page */
+}
+
+/* Mise en forme du bouton de menu "Hamburger" */
+.menu-btn {
+  position: relative; /* Positionne le bouton par rapport à son conteneur parent */
+  z-index: 3; /* Assure que le bouton est au-dessus des autres éléments */
+  width: 30px; /* Définit la largeur du bouton à 30px */
+  transition: all 0.4s ease-in-out; /* Ajoute une transition de 0.4 secondes pour toutes les propriétés, avec un effet d'accélération et de décélération */
+}
+
+/*
+  "aria-expanded" géré par JavaScript pour l'ouverture et la fermeture.
+ */
+.menu-btn[aria-expanded="true"] {
+  transform: rotate(
+    90deg
+  ); /* Fait pivoter le bouton de menu de 90 degrés lorsqu'il est en état "expanded" */
+}
+
+/* Ajouts CSS pour embellir le site : */ 
+
+.menu-btn:hover {
+  background-color: #f0f0f0;
+  border-radius: 35%;
+  cursor: pointer;
+}
+
+.menu-btn[aria-expanded="true"] {
+  background-color: #fdfdfd;
+}
+
+.menu__link {
+  color: #333;
+  text-decoration: underline;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.menu__link:hover {
+  color: #ff6f61;
+  transform: scale(1.1);
+}
+
+.menu__list {
+  gap: 1rem;
+  justify-content: center;
+}
+
+.menu__item {
+  margin: 1.4rem 0;
+  font-size: 1.2rem;
+  text-align: left;
+}
+
+a {
+  color: #333;
+  text-decoration: none;
+  font-family: 'Georgia', serif; 
+  font-size: 1.2rem;
+  font-weight: 500; 
+  line-height: 1.7;
+  letter-spacing: 0.3px;
+  margin: 0.5rem 0;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+h1, h2 {
+  font-family: 'Georgia', serif; 
+  font-weight: 700; 
+  color: #333; 
+  line-height: 1.4; 
+  letter-spacing: 0.3px; 
+  margin-bottom: 1rem; 
+}
+
+h1 {
+  font-size: 2.5rem; 
+}
+
+h2 {
+  font-size: 2rem; 
+}
