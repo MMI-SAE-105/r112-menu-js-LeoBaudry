@@ -40,3 +40,12 @@ On ajoute les propriétés "visibility: hidden" et "opacity: 0" pour masquer le 
     90deg
   ); /* Fait pivoter le bouton de menu de 90 degrés lorsqu'il est en état "expanded" */
 }
+
+/* Ajouts CSS pour embellir le site : */ 
+
+.menu-btn:hover {
+  background-color: #f0f0f0;
+  border-radius: 35%;
+  cursor: pointer;
+}
+
