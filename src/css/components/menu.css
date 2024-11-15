@@ -55,7 +55,7 @@ On ajoute les propriétés "visibility: hidden" et "opacity: 0" pour masquer le 
 
 .menu__link {
   color: #333;
-  text-decoration: none;
+  text-decoration: underline;
   transition: color 0.3s ease, transform 0.3s ease;
 }
 
@@ -66,11 +66,11 @@ On ajoute les propriétés "visibility: hidden" et "opacity: 0" pour masquer le 
 
 .menu__list {
   gap: 1rem;
-  justify-content: left;
+  justify-content: center;
 }
 
 .menu__item {
   margin: 1.4rem 0;
   font-size: 1.2rem;
-  text-align: center;
+  text-align: left;
 }
